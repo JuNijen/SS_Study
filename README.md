@@ -11,7 +11,7 @@ React, Coding Convention study
 [:: Wiki Link ::](https://github.com/JuNijen/SS_Study/wiki/Swift-naming-&-design-guide)
 
 ## 코딩 컨벤션 :: Swift Style Guide
-[:: Wiki Link ::](https://github.com/JuNijen/SS_Study/wiki)
+[:: Wiki Link ::](https://github.com/JuNijen/SS_Study/wiki/Coding-convention---Swift-style-guide)
 
 ## React
-[:: Wiki Link ::](https://github.com/JuNijen/SS_Study/wiki)
+[:: Wiki Link ::](https://github.com/JuNijen/SS_Study/wiki/React---Mainpage)
