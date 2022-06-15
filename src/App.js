@@ -6,8 +6,7 @@ import TodoItemList from './components/TodoItemList';
 
 class App extends Component {
 
-    id = 1
-
+    // 사전에 기입되는 데이터
     state = {
         input: '',
         todos: [
@@ -17,8 +16,10 @@ class App extends Component {
                 checked: false
             },
         ],
-        date: '220614',
     }
+    
+    // 사전 데이터 이후로 추가되게끔
+    id = 1
 
     // 변경되었을 경우
     handleChange = (e) => {
@@ -41,10 +42,10 @@ class App extends Component {
         });
     }
 
+    // 키 입력이 감지되었을 경우
     handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             this.handleCreate();
-            this.getTodayDate();
         }
     }
 
@@ -67,47 +68,25 @@ class App extends Component {
 
     handleRemove = (id) => {
         const {todos} = this.state;
+
         this.setState({
             todos: todos.filter(todo => todo.id !== id)
         });
     }
 
-    getTodayDate = () => {
-      const {date} = this.state;
-        var todayDate = new Date(),
-            result = todayDate.getFullYear() + '-' + todayDate.getMonth() + 1 +
-                    todayDate.getDate();
-        console.log(date, result, todayDate.getDate());
-
-
-        this.setState({
-            date: result
-        });
-    }
-
     render() {
-        const {date, input, todos} = this.state;
+        const {input, todos} = this.state;
         const {
             handleChange,
             handleCreate,
             handleKeyPress,
             handleToggle,
             handleRemove,
-            getTodayDate
         } = this;
-
+        
         return (
-            <TodoListTemplate
-                date={getTodayDate}
-                form={(
-                    <Form
-                        value={input}
-                        onKeyPress={handleKeyPress}
-                        onChange={handleChange}
-                        onCreate={handleCreate}/>
-                )}>
-                <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
-            </TodoListTemplate>
+          React.createElement(TodoListTemplate, { form: (React.createElement(Form, { value: input, onKeyPress: handleKeyPress, onChange: handleChange, onCreate: handleCreate })) },
+          React.createElement(TodoItemList, { todos: todos, onToggle: handleToggle, onRemove: handleRemove }))      
         );
     }
 }
