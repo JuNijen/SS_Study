@@ -1,3 +1,4 @@
+import { directive } from '@babel/types';
 import React, {Component} from 'react';
 import TodoItem from './TodoItem';
 
@@ -8,18 +9,18 @@ import TodoItem from './TodoItem';
 class TodoItemList extends Component {
 
     render() {
-        const {todos, onToggle, onRemove} = this.props;
+        const { todos, onToggle, onRemove } = this.props;
 
         // 각 todo객체에 데이터를 연결
-        const todoList = todos.map(({id, text, checked}) => (
-            <TodoItem
-                id={id}
-                text={text}
-                checked={checked}
-                onToggle={onToggle}
-                onRemove={onRemove}
-                key={id}/>
-        ))
+        // 각 todo객체에 데이터를 연결
+        const todoList = todos.map(({ id, text, checked }) => (
+            React.createElement(TodoItem, { 
+                id: id,
+                text: text,
+                checked: checked,
+                onToggle: onToggle,
+                onRemove: onRemove,
+                key: id })));        
 
         // 생성된 todoList의 Item을 반환
         return (React.createElement("div", null, todoList));
