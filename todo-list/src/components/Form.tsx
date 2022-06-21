@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import './Form.css';
 
 // Form 입력을 받는 구간

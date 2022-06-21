@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import TodoListTemplate from './components/TodoListTemplate';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 
 
-class App extends Component {
+class App extends React.Component {
 
     // 사전에 기입되는 데이터
     state = {
@@ -22,7 +22,7 @@ class App extends Component {
     id = 1
 
     // 변경되었을 경우
-    handleChange = (e) => {
+    handleChange = (e: { target: { value: any; }; }) => {
         this.setState({
             // input 의 다음 바뀔 값
             input: e.target.value
@@ -43,13 +43,13 @@ class App extends Component {
     }
 
     // 키 입력이 감지되었을 경우
-    handleKeyPress = (e) => {
+    handleKeyPress = (e: { key: string; }) => {
         if (e.key === 'Enter') {
             this.handleCreate();
         }
     }
 
-    handleToggle = (id) => {
+    handleToggle = (id: number) => {
         const {todos} = this.state;
 
         // 파라미터로 받은 id 를 가지고 몇번째 아이템인지 찾습니다.
@@ -66,7 +66,7 @@ class App extends Component {
         this.setState({todos: nextTodos});
     }
 
-    handleRemove = (id) => {
+    handleRemove = (id: number) => {
         const {todos} = this.state;
 
         this.setState({
@@ -85,8 +85,17 @@ class App extends Component {
         } = this;
         
         return (
-          React.createElement(TodoListTemplate, { form: (React.createElement(Form, { value: input, onKeyPress: handleKeyPress, onChange: handleChange, onCreate: handleCreate })) },
-          React.createElement(TodoItemList, { todos: todos, onToggle: handleToggle, onRemove: handleRemove }))      
+          React.createElement(TodoListTemplate, {
+            form: (React.createElement(
+                Form, { 
+                    value: input,
+                    onKeyPress: handleKeyPress,
+                    onChange: handleChange,
+                    onCreate: handleCreate })) },
+          React.createElement(TodoItemList, {
+            todos: todos,
+            onToggle: handleToggle,
+            onRemove: handleRemove }))      
         );
     }
 }

@@ -1,5 +1,15 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import './TodoItem.css';
+
+
+interface props
+{
+    text : string,
+    checked : boolean,
+    id : number,
+    onToggle : any,
+    onRemove : any,
+}
 
 // TodoItemList에 들어가는 Item요소
 // text:     todo 내용
@@ -7,7 +17,7 @@ import './TodoItem.css';
 // id:       todo item의 고유 아이디
 // onToggle: 체크박스를 on off 하는 함수
 // onRemove: 아이템을 삭제시키는 함수
-class TodoItem extends Component {
+class TodoItem extends React.Component {
     render() {
 
         const {text, checked, id, onToggle, onRemove} = this.props;

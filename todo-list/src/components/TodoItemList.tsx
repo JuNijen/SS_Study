@@ -1,5 +1,5 @@
 import { directive } from '@babel/types';
-import React, {Component} from 'react';
+import * as React from 'react';
 import TodoItem from './TodoItem';
 
 // TotoItem을 받는 List
@@ -24,6 +24,8 @@ class TodoItemList extends Component {
 
         // 생성된 todoList의 Item을 반환
         return (React.createElement("div", null, todoList));
+
+        
     }
 }
 
