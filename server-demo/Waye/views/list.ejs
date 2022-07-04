@@ -9,18 +9,17 @@
   <title>Document</title>
 </head>
 <body>
+  <%- include('nav-bar.ejs') %>
   <h4 class="container mt-4"><strong>서버에서 가져온 할 일 리스트</strong></h4>
 
   <ul class="list-group">
     <% for (var i = 0; i < list.length; i++) { %>
     <li class="list-group-item">
-        <div class="container mt-3">
           <h4>To-Do 제목 : <%= list[i].title %></h4>
           <p>To-Do 마감일 : <%= list[i].date %></p>
           <button class="btn btn-danger btn-delete" data-id=<%= list[i]._id %>>Delete</button>
-        </div>  
-      </li>
-      <%} %>
+    </li>
+    <%} %>
   </ul>
 
 
@@ -39,10 +38,10 @@
         {
           method : 'DELETE',
           url : '/todo-delete',
-          data : { _id : id }
+          data : { _id : e.target.dataset.id }
         }).done(function(result)
         {
-          console.log('list.ejs/script-ajax :: success');
+          console.log('list.ejs/script-ajax :: success',target_list.parent('li'));
           target_list.parent('li').fadeOut();
 
         }).fail(function(xhr, textStatus, errorThrown)

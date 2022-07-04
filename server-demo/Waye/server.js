@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser= require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const methodOverride = require('method-override')
 var db;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'))
 app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 
@@ -33,14 +35,15 @@ MongoClient.connect('mongodb+srv://admin:needsmorelove1234@cluster0.r27lv.mongod
 //get
 app.get('/', function(req, res)
 {
+    res.render('index.ejs');
     // res.sendFile(__dirname + '/webpage/register/index.html')
-    res.sendFile(__dirname + '/index.html')
+    // res.sendFile(__dirname + '/index.html')
 });
 
 app.get('/write', function(req, res)
 {
-    res.sendFile(__dirname + '/webpage/write.html')
-    // res.send('메인 페이지입니다.');
+    res.render('write.ejs');
+    // res.sendFile(__dirname + '/webpage/write.html')
 });
 
 app.get('/list', function(req, res)
@@ -61,6 +64,15 @@ app.get('/list-detail/:id', function(req, res)
     })
 });
 
+// 기존의 데이터 확인하고 수정 가능하도록 보완 필요
+app.get('/edit/:id', function(req, res)
+{
+    db.collection('post').findOne({ _id : parseInt(req.params.id) }, function(error, result)
+    {
+        console.log(result);
+        res.render('edit.ejs', { data : result });
+    })
+});
 
 
 
@@ -94,7 +106,15 @@ app.post('/add', function(req, res){
     });
 });
 
+app.put('/edit', function(req, res){
 
+    db.collection('post').updateOne( { _id: req.body.id}, {$set : { title : req.body.title , date : req.body.date }} , function(error, result)
+    {
+      console.log('Server.js/edit :: finished edit');
+      res.redirect('/list') 
+    });
+
+});
 
 app.delete('/todo-delete', function(req, res)
 {
@@ -107,3 +127,12 @@ app.delete('/todo-delete', function(req, res)
         res.status(200).send({message : 'Server.js/todo-delete :: success'});
     })
 })
+
+
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local');
+// const session = require('express-session');
+
+// app.use(session({secret : '***', resave : true, saveUninitialized : false}))
+// app.use(passport.initialize());
+// app.use(passport.session()); 
