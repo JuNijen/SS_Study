@@ -2,3 +2,8 @@ body
 {
     font-family: 'nanumsquare';
 }
+
+.navbar-collapse .login > a
+{
+    color: white;
+}

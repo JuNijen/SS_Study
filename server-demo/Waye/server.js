@@ -12,7 +12,7 @@ app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 
 
-MongoClient.connect('mongodb+srv://admin:needsmorelove1234@cluster0.r27lv.mongodb.net/?retryWrites=true&w=majority', function(error, client)
+MongoClient.connect('mongodb://admin:needsmorelove1234@cluster0-shard-00-00.r27lv.mongodb.net:27017,cluster0-shard-00-01.r27lv.mongodb.net:27017,cluster0-shard-00-02.r27lv.mongodb.net:27017/?ssl=true&replicaSet=atlas-fouim8-shard-0&authSource=admin&retryWrites=true&w=majority', function(error, client)
 {
     if(error)
     {
@@ -25,10 +25,6 @@ MongoClient.connect('mongodb+srv://admin:needsmorelove1234@cluster0.r27lv.mongod
 
 
     db = client.db('todoapp');
-    // db.collection('post').insertOne({_id:0, name:'ruhr', age:24}, function(error, result)
-    // {
-    //     console.log('MongoDB :: finished saving');
-    // });
 })
 
 
@@ -43,7 +39,6 @@ app.get('/', function(req, res)
 app.get('/write', function(req, res)
 {
     res.render('write.ejs');
-    // res.sendFile(__dirname + '/webpage/write.html')
 });
 
 app.get('/list', function(req, res)
@@ -74,6 +69,23 @@ app.get('/edit/:id', function(req, res)
     })
 });
 
+app.get('/mypage', checkLogin, function(req, res){
+    console.log('Server.js/mypage :: ' + req.user);
+    res.render('mypage.ejs', {user : req.user})
+});
+
+function checkLogin(req, res, next)
+{
+    if (req.user)
+    {
+        next()
+    }
+    else 
+    {
+        res.send('로그인이 필요합니다.')
+    }
+
+}
 
 
 //post
@@ -106,6 +118,7 @@ app.post('/add', function(req, res){
     });
 });
 
+
 app.put('/edit', function(req, res){
 
     db.collection('post').updateOne( { _id: req.body.id}, {$set : { title : req.body.title , date : req.body.date }} , function(error, result)
@@ -129,10 +142,64 @@ app.delete('/todo-delete', function(req, res)
 })
 
 
-// const passport = require('passport');
-// const LocalStrategy = require('passport-local');
-// const session = require('express-session');
+// Login
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const session = require('express-session');
 
-// app.use(session({secret : '***', resave : true, saveUninitialized : false}))
-// app.use(passport.initialize());
-// app.use(passport.session()); 
+app.use(session({secret : 'mongodb+srv://admin:needsmorelove1234@cluster0.r27lv.mongodb.net/?retryWrites=true&w=majority', resave : true, saveUninitialized : false}))
+app.use(passport.initialize());
+app.use(passport.session()); 
+
+
+app.get('/login', function(req, res){
+    res.render('login.ejs')
+});
+
+app.post('/login', passport.authenticate('local', {
+    failureRedirect: '/fail'
+}), function (req, res) {
+    console.log('Server.js/login :: ' + res.id);
+    res.redirect('/')
+});
+
+passport.use(new LocalStrategy({
+    usernameField: 'id',
+    passwordField: 'pw',
+    session: true,              //세션을 만들것인지
+    passReqToCallback: false,   //id, pw외에 다른 정보검사가 필요한지
+}, function (input_id, input_pw, done) {
+    db.collection('login').findOne({
+        id: input_id
+    }, function (error, result) {
+        if (error) {        
+            console.log('Server.js/passport.use :: ' + error);   
+            return done(error)
+        }
+        if (!result) {
+            return done(null, false, {
+                message: '존재하지 않는 회원정보입니다.'
+            })
+        }
+        // 기능 구현 및 테스트 이후 암호화 필요
+        if (input_pw == result.pw) {
+            return done(null, result)
+        } else {
+            return done(null, result, {
+                message: '잘못된 회원정보 입력입니다.'
+            })
+        }
+    })
+}));
+
+passport.serializeUser(function (user, done) {
+    done(null, user.id)
+});
+
+// DB에서 위에 있는 user.id로 유저를 찾은 뒤 유저 정보를 받아옴.
+passport.deserializeUser(function (user_id, done) {
+    db.collection('login').findOne({id : user_id}, function(error, result)
+    {
+        done(null, result)
+    })
+});
