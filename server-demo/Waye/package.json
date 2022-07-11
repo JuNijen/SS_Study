@@ -9,6 +9,7 @@
   },
   "author": "Ruhr Elian",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.17.2",
     "express-session": "^1.17.3",
