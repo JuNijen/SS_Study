@@ -10,17 +10,18 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'))
 app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
+require('dotenv').config();
 
 
-MongoClient.connect('mongodb://admin:needsmorelove1234@cluster0-shard-00-00.r27lv.mongodb.net:27017,cluster0-shard-00-01.r27lv.mongodb.net:27017,cluster0-shard-00-02.r27lv.mongodb.net:27017/?ssl=true&replicaSet=atlas-fouim8-shard-0&authSource=admin&retryWrites=true&w=majority', function(error, client)
+MongoClient.connect(process.env.DB_URL, function(error, client)
 {
     if(error)
     {
         return console.log(error)
     }
-    app.listen(8080, function()
+    app.listen(process.env.PORT, function()
     {
-        console.log('Server.js/connect :: listening on 8080')
+        console.log('Server.js/connect :: listening on ' + process.env.PORT)
     });
 
 
@@ -153,7 +154,7 @@ app.use(passport.session());
 
 
 app.get('/login', function(req, res){
-    res.render('login.ejs')
+    res.render('login.js')
 });
 
 app.post('/login', passport.authenticate('local', {
