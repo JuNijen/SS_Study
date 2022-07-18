@@ -1,0 +1,68 @@
+.komsa-header {
+    width: 1920px;
+    height: 100px;
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+
+/* .komsa-header .logo {
+    background: transparent url('img/KOMSA_LOGO.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+} */
+
+.komsa-header .logo {
+    margin-left: 390px;
+}
+
+.komsa-header > p {
+    /* UI Properties */
+    text-align: center;
+    font: normal normal bold 20px/24px Pretendard;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.komsa-header .right-sides {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.komsa-header .logout-box {
+    height: 100%;
+}
+
+.komsa-header .logout-btn {
+    /* Layout Properties */
+    width: 87px;
+    height: 37px;
+
+    margin-left: 45px;
+    margin-right: 390px;
+
+    /* UI Properties */
+    background: #3A76FF 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    opacity: 1;
+    color: white;
+    border: none;
+}
+
+.komsa-header Nav.Link {
+    /* Layout Properties */
+    top: 38px;
+    left: 1316px;
+    width: 47px;
+    height: 24px;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 20px/24px Pretendard;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
