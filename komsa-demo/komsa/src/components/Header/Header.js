@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function HeaderNav() {
+function Header() {
   // const logoUrl = '../../img/komsa_logo.png'
 
   return (
@@ -16,7 +16,7 @@ function HeaderNav() {
       {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="komsa-header">
           <Container fluid>
-            <img className='logo' src={KomsaLogo}></img>
+            <img className='logo' alt='' src={KomsaLogo}></img>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -29,9 +29,9 @@ function HeaderNav() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <p className='right-sides' href="#action1">선박1</p>
-                  <p className='right-sides' href="#action2">선박2</p>
-                  <p className='right-sides' href="#action2">선박3</p>
+                  <p className='right-sides' href="#">선박1</p>
+                  <p className='right-sides' href="#">선박2</p>
+                  <p className='right-sides' href="#">선박3</p>
                   <div className='logout-box'>
                     <button className='logout-btn'>로그아웃</button>
                   </div>
@@ -45,4 +45,4 @@ function HeaderNav() {
   );
 }
 
-export default HeaderNav;
+export default Header;
