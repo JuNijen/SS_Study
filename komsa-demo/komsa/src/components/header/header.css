@@ -1,38 +1,53 @@
 .komsa-header {
+    /* Layout Properties */
     width: 1920px;
     height: 100px;
+
+    /* UI Properties */
     background-color: #FFFFFF;
     opacity: 1;
 }
 
-/* .komsa-header .logo {
-    background: transparent url('img/KOMSA_LOGO.png') 0% 0% no-repeat padding-box;
-    opacity: 1;
-} */
-
 .komsa-header .logo {
+    /* Layout Properties */
     margin-left: 390px;
 }
 
-.komsa-header > p {
+.komsa-header > a {
+    /* Layout Properties */
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
     /* UI Properties */
     text-align: center;
     font: normal normal bold 20px/24px Pretendard;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
+    text-decoration: none;
+}
 
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+.komsa-header > a:hover, a:link{
+    /* UI Properties */
+    text-align: center;
+    font: normal normal bold 20px/24px Pretendard;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    text-decoration: none;
 }
 
 .komsa-header .right-sides {
+    /* Layout Properties */
     margin-left: 35px;
     margin-right: 35px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .komsa-header .logout-box {
+    /* Layout Properties */
     height: 100%;
 }
 
@@ -40,7 +55,6 @@
     /* Layout Properties */
     width: 87px;
     height: 37px;
-
     margin-left: 45px;
     margin-right: 390px;
 

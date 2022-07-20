@@ -35,6 +35,10 @@
     text-align: center;
 }
 
+/* .gps-box .row .col{
+    flex: 0 0 !important;
+} */
+
 .gps-rightbox {
     /* Layout Properties */
     width: 700px;
@@ -43,6 +47,12 @@
 
     /* UI Properties */
     opacity: 1;
+    background-color: #555555;
+}
+
+.gps-box .gps-leftbox > table{
+    /* Layout Properties */
+    width: 414px;
 }
 
 .gps-box .gps-leftbox > table > tr > th{

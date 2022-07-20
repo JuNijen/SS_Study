@@ -29,9 +29,9 @@ function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <p className='right-sides' href="#">선박1</p>
-                  <p className='right-sides' href="#">선박2</p>
-                  <p className='right-sides' href="#">선박3</p>
+                  <a className='right-sides' href="#">선박1</a>
+                  <a className='right-sides' href="#">선박2</a>
+                  <a className='right-sides' href="#">선박3</a>
                   <div className='logout-box'>
                     <button className='logout-btn'>로그아웃</button>
                   </div>

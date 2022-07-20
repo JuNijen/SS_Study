@@ -3,15 +3,18 @@ import React from 'react';
 import './PageTemplate.css';
 
 import Header from '../Header/Header';
-import Body from '../Gps/Gps';
+// import Body from '../Gps/Gps';
 import Footer from '../Footer/Footer';
+import LoginPage from '../Login/Login';
+import CctvPage from '../Cctv/Cctv';
+import GpsPage from '../Gps/Gps';
 
 const PageTemplate = (header, body, footer) => 
 {
     return(
         React.createElement("div", null,
             React.createElement(Header, null),
-            React.createElement(Body, null),
+            React.createElement(LoginPage, null),
             React.createElement(Footer, null)
         )
 
