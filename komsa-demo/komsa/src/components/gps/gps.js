@@ -2,13 +2,15 @@ import React from 'react';
 // import { Wrapper } from "@googlemaps/react-wrapper";
 // import { Wrapper, Status } from "@googlemaps/react-wrapper";
 // import { GoogleMap } from '@react-google-maps/api';
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './Gps.css';
-// import Map from "./Map";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import GoogleMapReact from 'google-map-react';
+import Map from './Map';
 
 
 // typescript 형태의 simple-map 예제
@@ -110,16 +112,82 @@ const render = (status) => {
 // }, [ref, map]);
 
 //참고자료 : https://tried.tistory.com/98
-const center = {
-    lat: 37.54,
-    lng: 127.04,
-  };
+// const center = {
+//     lat: 37.54,
+//     lng: 127.04,
+//   };
   
-  type props = {
-    mapLocation: any | Array<Object>;
-    containerStyle: object;
-    mapviewMarkerClickHandler : Function
-  };
+//   type props = {
+//     mapLocation: any | Array<Object>;
+//     containerStyle: object;
+//     mapviewMarkerClickHandler : Function
+//   };
+
+// function LoadMap() {
+//     const { isLoaded } = useLoadScript({
+//       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
+//       });
+
+//     if (!isLoaded) return <div>Loading...</div>;
+//     return <Map />;
+//   }
+
+
+//참고자료 : https://www.npmjs.com/package/google-map-react
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+
+//참고자료 : https://github.com/google-map-react/google-map-react
+function SimpleMap(){
+    const defaultProps = {
+      center: {
+        lat: 10.99835602,
+        lng: 77.01502627
+      },
+      zoom: 11
+    };
+  
+    return (
+      // Important! Always set the container height explicitly
+      <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: "AIzaSyDj3gPwkRAI7Fwa7p8If8LlaAUEDkUnahE" }}
+          defaultCenter={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
+        >
+          <AnyReactComponent
+            lat={59.955413}
+            lng={30.337844}
+            text="My Marker"
+          />
+        </GoogleMapReact>
+      </div>
+    );
+  }
+//참고자료 : https://www.youtube.com/watch?v=9e-5QHpadi0&ab_channel=GoogleMapsPlatform
+// function SettingMap() {
+//     const { isLoaded } = useLoadScript({
+//         googleMapsApiKey: "AIzaSyDj3gPwkRAI7Fwa7p8If8LlaAUEDkUnahE"
+//     //   googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
+//       });
+
+//     if (!isLoaded) return <div>Loading...</div>;
+//     return <LoadMap />;
+//   }
+  
+// function LoadMap() {
+//   const mapPos = {lat:44, lng:-80}
+//   const markerPos = {lat:44, lng:-80}
+
+//   return (
+//     <GoogleMap
+//       zoom={10}
+//       center={mapPos}
+//       mapContainerClassNaame="map-container"
+//     >
+//       <Marker position={markerPos}></Marker>
+//     </GoogleMap>
+// )}
 
 
 //gps와 관련된 Data(date, pos)를 관리하기 편하게 하기 위한 구조체
@@ -208,7 +276,7 @@ const GpsPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => 
             {/* <Wrapper apiKey={"AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"} render={render} />; */}
 
             {/* 참고자료 : https://tried.tistory.com/98 */}
-            <LoadScript
+            {/* <LoadScript
             googleMapsApiKey = {process.env.GOOGLE_MAPS_API_KEY}
             >
             <GoogleMap
@@ -225,7 +293,11 @@ const GpsPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => 
                 )}
                 
             </GoogleMap>
-            </LoadScript>
+            </LoadScript> */}
+
+            <SimpleMap />
+
+            {/* <SettingMap /> */}
         </Col>
         </Row>
     </div>
