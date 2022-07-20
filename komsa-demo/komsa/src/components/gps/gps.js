@@ -1,12 +1,14 @@
 import React from 'react';
-import { Wrapper } from "@googlemaps/react-wrapper";
-import { GoogleMap } from '@react-google-maps/api';
+// import { Wrapper } from "@googlemaps/react-wrapper";
+// import { Wrapper, Status } from "@googlemaps/react-wrapper";
+// import { GoogleMap } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './Gps.css';
-import Map from "./Map";
+// import Map from "./Map";
 
 
 // typescript 형태의 simple-map 예제
@@ -91,7 +93,55 @@ import Map from "./Map";
 //   }
 
 
-function GpsPage() {
+
+//참고자료 : https://developers.google.com/maps/documentation/javascript/react-map#javascript
+const render = (status) => {
+    return <h1>{status}</h1>;
+  };
+
+//React Hooks must be called in a React function component or a custom React Hook function
+// const ref = React.useRef(null);
+// const [map, setMap] = React.useState();
+
+// React.useEffect(() => {
+//   if (ref.current && !map) {
+//     setMap(new window.google.maps.Map(ref.current, {}));
+//   }
+// }, [ref, map]);
+
+//참고자료 : https://tried.tistory.com/98
+const center = {
+    lat: 37.54,
+    lng: 127.04,
+  };
+  
+  type props = {
+    mapLocation: any | Array<Object>;
+    containerStyle: object;
+    mapviewMarkerClickHandler : Function
+  };
+
+
+//gps와 관련된 Data(date, pos)를 관리하기 편하게 하기 위한 구조체
+//...를 만들고 싶었는데 없다는 것 같아
+//참고자료 : https://pcb4.tistory.com/1326
+function GpsData(){
+    var date, pos;
+}
+
+const GpsPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => {
+
+    //map으로 구성된 array를 사용하고 싶은데
+    var gpsData = new GpsData();
+    gpsData.date = "2022.07.07 14:35";
+    gpsData.pos = "37.3885, 126.5077";
+    
+    var gpsDatas = new Array();
+    for (var i = 0; i < 8; i++)
+    {
+        gpsDatas.push(gpsData);
+    }
+
 
   return (
     <div className='gps-box'>
@@ -104,37 +154,38 @@ function GpsPage() {
                     <th>위치</th>
                     <th>GPS 위치값</th>
                 </tr>
+                {/* 구현 이후 추후 js로 변환하여 for문 사용 할 예정 */}
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[0].date}</td>
+                    <td>{gpsDatas[0].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[1].date}</td>
+                    <td>{gpsDatas[1].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[2].date}</td>
+                    <td>{gpsDatas[2].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[3].date}</td>
+                    <td>{gpsDatas[3].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[4].date}</td>
+                    <td>{gpsDatas[4].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[5].date}</td>
+                    <td>{gpsDatas[5].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[6].date}</td>
+                    <td>{gpsDatas[6].pos}</td>
                 </tr>
                 <tr>
-                    <td>2022.07.07 14:35</td>
-                    <td>37.3885, 126.5077</td>
+                    <td>{gpsDatas[7].date}</td>
+                    <td>{gpsDatas[7].pos}</td>
                 </tr>
             </table>
         </Col>
@@ -155,6 +206,26 @@ function GpsPage() {
                 mapElement={<div style={{ height: `100%` }} />}
             /> */}
             {/* <Wrapper apiKey={"AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"} render={render} />; */}
+
+            {/* 참고자료 : https://tried.tistory.com/98 */}
+            <LoadScript
+            googleMapsApiKey = {process.env.GOOGLE_MAPS_API_KEY}
+            >
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={4}
+            >
+                {!Array.isArray(mapLocation) ? (
+                <Marker position={mapLocation} />
+                ) : (
+                    mapLocation.map((location: google.maps.LatLng, index: number) => (
+                    <Marker position={location} key={index} onClick={(e) => mapviewMarkerClickHandler(e)} />
+                ))
+                )}
+                
+            </GoogleMap>
+            </LoadScript>
         </Col>
         </Row>
     </div>
