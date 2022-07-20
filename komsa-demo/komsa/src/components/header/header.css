@@ -1,0 +1,82 @@
+.komsa-header {
+    /* Layout Properties */
+    width: 1920px;
+    height: 100px;
+
+    /* UI Properties */
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+
+.komsa-header .logo {
+    /* Layout Properties */
+    margin-left: 390px;
+}
+
+.komsa-header > a {
+    /* Layout Properties */
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    /* UI Properties */
+    text-align: center;
+    font: normal normal bold 20px/24px Pretendard;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.komsa-header > a:hover, a:link{
+    /* UI Properties */
+    text-align: center;
+    font: normal normal bold 20px/24px Pretendard;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.komsa-header .right-sides {
+    /* Layout Properties */
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.komsa-header .logout-box {
+    /* Layout Properties */
+    height: 100%;
+}
+
+.komsa-header .logout-btn {
+    /* Layout Properties */
+    width: 87px;
+    height: 37px;
+    margin-left: 45px;
+    margin-right: 390px;
+
+    /* UI Properties */
+    background: #3A76FF 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    opacity: 1;
+    color: #FFFFFF;
+    border: none;
+}
+
+.komsa-header Nav.Link {
+    /* Layout Properties */
+    top: 38px;
+    left: 1316px;
+    width: 47px;
+    height: 24px;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 20px/24px Pretendard;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}

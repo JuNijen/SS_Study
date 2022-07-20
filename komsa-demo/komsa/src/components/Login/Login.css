@@ -1,0 +1,88 @@
+.login-box {
+    /* Layout Properties */
+    width: 1920px;
+    height: 770px;
+
+    /* UI Properties */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    opacity: 1;
+    
+    text-align: center;
+}
+
+.login-title {
+    /* Layout Properties */
+    padding-top: 65px;
+    margin-bottom: 52px;
+    
+    /* UI Properties */
+    font: normal normal 600 40px/48px Pretendard;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+
+.login-wrapper{
+    /* Layout Properties */
+    width: 550px;
+    height: 503px;
+    margin-top: 115px;
+    display: inline-block;
+
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 8px 2px 62px #2233591A;
+    border-radius: 20px;
+    opacity: 1;
+    
+    text-align: center;
+}
+
+.login-box .login-wrapper > input{
+    /* Layout Properties */
+    width: 370px;
+    height: 50px;
+    padding-left: 19px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+
+    /* UI Properties */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+
+    outline: none;
+    border:none;
+
+    /* Text Settings */
+    text-align: left;
+    font: normal normal 600 17px/20px Pretendard;
+    letter-spacing: 0px;
+    color: #999999;
+}
+
+.login-box .login-wrapper > input:focus {
+    /* UI Properties */
+    outline: none;
+}
+
+.login-box .login-wrapper > button {
+    /* Layout Properties */
+    width: 370px;
+    height: 63px;
+    margin-top: 31px;
+
+    /* UI Properties */
+    background: #3A76FF 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    opacity: 1;
+    border-style: none;
+
+    /* Text Settings */
+    text-align: center;
+    font: normal normal 600 18px/21px Pretendard;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}

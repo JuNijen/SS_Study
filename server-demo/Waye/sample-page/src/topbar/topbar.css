@@ -1,0 +1,14 @@
+.header
+{
+    background-color: antiquewhite;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.header .row-box
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}

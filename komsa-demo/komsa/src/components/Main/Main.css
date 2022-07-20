@@ -1,0 +1,203 @@
+.main-box {
+    /* Layout Properties */
+    width: 1920px;
+    height: 770px;
+
+    /* UI Properties */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    opacity: 1;
+    
+    text-align: center;
+}
+
+.main-wrapper{
+    /* Layout Properties */
+    /* 801+33+306 */
+    /* width: 1140px; */
+    /* 356+33+160 */
+    /* height: 549px; */
+    width: auto;
+    height: 549px;
+    margin-top: 115px;
+    display: inline-block;
+
+    /* UI Properties */
+    background: #555555 0% 0% no-repeat padding-box;
+    box-shadow: 8px 2px 62px #2233591A;
+    border-radius: 20px;
+    opacity: 1;
+    
+    text-align: center;
+}
+
+.main-boxes > a {
+
+}
+
+.main-left-group{
+    margin-right: 33px;
+}
+
+.main-right-group{
+
+}
+
+.main-left-group .row{
+    --bs-gutter-x: 0rem;
+}
+
+.main-lt-box{
+    /* Layout Properties */
+    width: 801px;
+    height: 356px;
+
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 8px 2px 62px #2233591A;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.main-lt-box > a{
+    /* Layout Properties */
+    top: 39px;
+    left: 45px;
+    /* bottom: 287px; */
+    position: relative;
+
+    /* Text Settings */
+    text-align: left;
+    font: normal normal bold 25px/30px Pretendard;
+    letter-spacing: -0.63px;
+    color: #000000;
+    opacity: 1;
+}
+
+.main-lb-box-wrapper{
+    display: flex !important;
+    /* flex-wrap: wrap; */
+}
+
+.main-lb-box-sensor{
+    /* Layout Properties */
+    width: 246px !important;
+    height: 160px;
+    margin-top: 33px !important;
+    margin-right: 31px;
+
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 8px 2px 62px #2233591A;
+    border: 2px solid #3A76FF;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.main-lb-box-sensor > a{
+    text-decoration: none;
+}
+
+.main-lb-box-sensor .text-sensor-name{
+    /* Layout Properties */
+    top: 26px;
+    left: 26px;
+    position: relative;
+
+    /* Text Settings */
+    text-align: left;
+    font: normal normal bold 15px/18px Pretendard;
+    letter-spacing: -0.38px;
+    color: #3A76FF;
+    opacity: 1;
+}
+
+.main-lb-box-sensor .text-sensor-data{
+    /* Layout Properties */
+    top: 54px;
+    position: relative;
+
+    /* Text Settings */
+    text-align: left;
+    font: normal normal 600 24px/29px Pretendard;
+    letter-spacing: -0.6px;
+    color: #333333;
+    opacity: 1;
+}
+
+.main-lb-box-sensor > img{
+    /* Layout Properties */
+    bottom: 22px;
+    right: 22px;
+    position: relative;
+}
+
+.main-r-box-cctv{
+    /* Layout Properties */
+    width: 306px;
+    height: 200px;
+    margin-bottom: 32px;
+
+    /* UI Properties */
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.bg-cctv1{
+    /* top: 200px;
+    left: 1224px; */
+    background: #3A76FF 0% 0% no-repeat padding-box;
+}
+
+.bg-cctv2{
+    /* top: 432px;
+    left: 1224px; */
+    background: #012A85 0% 0% no-repeat padding-box;
+}
+
+.main-r-box-cctv > a{
+    /* Layout Properties */
+    top: 39px;
+    left: 34px;
+    position: relative;
+
+    /* UI Properties */
+    text-align: left;
+    font: normal normal medium 19px/23px Pretendard !important;
+    letter-spacing: -0.47px !important;
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+.main-r-box-gpscheck{
+    /* Layout Properties */
+    width: 306px;
+    height: 84px;
+
+    /* UI Properties */
+    background: #D9DDE2 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    opacity: 1;
+
+    /* Text Settings */
+    text-align: left;
+    font: normal normal bold 21px/25px Pretendard;
+    letter-spacing: -0.53px;
+    color: #000000;
+}
+
+.main-r-box-gps-check > a{
+    /* Layout Properties */
+    /* padding-top: 29px;
+    padding-left: 34px; */
+}
+
+.main-r-box-gps-check-button{
+    /* Layout Properties */
+    /* padding-top: 29px;
+    padding-left: 34px; */
+
+    /* Layout Properties */
+    /* right: 22px;
+    bottom: 22px;
+    position: relative; */
+}
