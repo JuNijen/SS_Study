@@ -1,26 +1,32 @@
-// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import React from "react";
+import GoogleMapReact from 'google-map-react';
 
+//참고자료 : https://www.npmjs.com/package/google-map-react
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-//참고자료 : https://www.youtube.com/watch?v=9e-5QHpadi0&ab_channel=GoogleMapsPlatform
-export default function SettingMap() {
-    const { isLoaded } = useLoadScript({
-      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
-      });
-
-    if (!isLoaded) return <div>Loading...</div>;
-    return <LoadMap />;
-  }
-  
-function LoadMap() {
-  const mapPos = {lat:44, lng:-80}
-  const markerPos = {lat:44, lng:-80}
+export default function SimpleMap(){
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627
+    },
+    zoom: 11
+  };
 
   return (
-    <GoogleMap
-      zoom={10}
-      center={mapPos}
-      mapContainerClassNaame="map-container"
-    >
-      <Marker position={markerPos}></Marker>
-    </GoogleMap>
-)}
+    // Important! Always set the container height explicitly
+    <div style={{ height: '100vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyDj3gPwkRAI7Fwa7p8If8LlaAUEDkUnahE" }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+      >
+        <AnyReactComponent
+          lat={59.955413}
+          lng={30.337844}
+          text="My Marker"
+        />
+      </GoogleMapReact>
+    </div>
+  );
+}
