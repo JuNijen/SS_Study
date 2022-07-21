@@ -2,8 +2,11 @@ import React from 'react';
 import { Row } from 'reactstrap';
 import { Col } from 'reactstrap';
 
-import getServerData from './Server';
 import './Main.css';
+// import getServerData from './Server';
+import SensorBox from './SensorBox';
+import CctvBox from './CctvBox';
+import GpsCheckBox from './GpsCheckBox';
 
 import ShipImage from '../../img/ship.png'
 import GpsCheckButton from '../../img/button_plus.svg'
@@ -15,7 +18,6 @@ import SmokeSensor from '../../img/icon_smoke.svg'
 import Line1 from '../../img/line_1.svg'
 import Line2 from '../../img/line_2.svg'
 import Line3 from '../../img/line_3.svg'
-import { getDefaultNormalizer } from '@testing-library/react';
 
 
 // 서버 설정 구간. Server.js 참고
@@ -57,6 +59,7 @@ function MainPage() {
     const sensorName = ["온도센서", "진동센서", "연기센서"];
     var sensorData = ["온도테스트", "진동테스트", "연기테스트(서버연결안됨)"];
     var shipName = "선박1 (선박명)";
+    var cctvName = ["CCTV1", "CCTV2"];
 
     //데이터가 있을 시 새로 셋팅 해 줌.
     //데이터가 없을 시 기존에 선언한 가데이터 활용.
@@ -81,37 +84,16 @@ function MainPage() {
                         <img className='' alt='' src={Line3}/>
                     </div>
                     <div className='main-lb-box-wrapper'>
-                        <div className='main-lb-box-sensor'>
-                            <Col>
-                                <a className='text-sensor-name'>{sensorName[0]}</a>
-                                <a className='text-sensor-data'>{sensorData[0]}</a>
-                            </Col>
-                            <Col>
-                                <img className='' alt='' src={TemperatureSensor}/>
-                            </Col>
-                        </div>
-                        <div className='main-lb-box-sensor'>
-                            <a className='text-sensor-name'>{sensorName[1]}</a>
-                            <a className='text-sensor-data'>{sensorData[1]}</a>
-                            <img className='' alt='' src={VibrationSensor}/>
-                        </div>
-                        <div className='main-lb-box-sensor'>
-                            <a className='text-sensor-name'>{sensorName[2]}</a>
-                            <a className='text-sensor-data'>{sensorData[2]}</a>
-                            <img className='' alt='' src={SmokeSensor}/>
-                        </div>
+                        <SensorBox className='' _sensorName={sensorName[0]} _sensorData={sensorData[0]} _sensorImage={TemperatureSensor}/>
+                        <SensorBox className='' _sensorName={sensorName[1]} _sensorData={sensorData[1]} _sensorImage={VibrationSensor}/>
+                        <SensorBox className='' _sensorName={sensorName[2]} _sensorData={sensorData[2]} _sensorImage={SmokeSensor}/>
                     </div>
                 </Col>
                 <Col>
-                    <div className='main-r-box-cctv bg-cctv1'>
-                        <a>CCTV1</a>
-                    </div>
-                    <div className='main-r-box-cctv bg-cctv2'>
-                        <a>CCTV2</a>
-                    </div>
-                    <div className='main-r-box-gps-check'>
-                        <a>GPS 확인</a>
-                        <img className='main-r-box-gps-check-button' alt='' src={GpsCheckButton}/>
+                    <div className='main-r-box-wrapper'>
+                        <CctvBox className='' _cctvName={cctvName[0]} _cctvData={""} _cctvButton={""}/>
+                        <CctvBox className='' _cctvName={cctvName[0]} _cctvData={""} _cctvButton={""}/>
+                        <GpsCheckBox className='' _gpsCheckButton={GpsCheckButton}/>
                     </div>
                 </Col>
             </Row>
