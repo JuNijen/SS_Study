@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Cctv.css';
 
-
+//CCTV 화면
 function CctvPage() {
 
   return (

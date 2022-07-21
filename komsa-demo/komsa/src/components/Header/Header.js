@@ -8,6 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+//페이지 상단 화면
 function Header() {
   // const logoUrl = '../../img/komsa_logo.png'
 
