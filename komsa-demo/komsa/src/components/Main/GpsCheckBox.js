@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import { Row } from 'reactstrap';
-import { Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+
 
 import './Main.css';
 
-
+// 메인 페이지의 GPS 관리 박스
+//_gpsCheckButton : 우측 + 버튼 이미지
 class GpsCheckBox extends Component{
     render(){
 

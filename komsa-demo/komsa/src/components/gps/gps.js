@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-import './Gps.css';
+import { Row, Col } from 'reactstrap';
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
+import './GPS.css';
 
+
+// GPS 기능을 사용하기 위한 구간.
 function LoadMap() {
     const { isLoaded } = useLoadScript({
         // googleMapsApiKey : process.env.GOOGLE_MAPS_API_KEY
@@ -54,153 +54,6 @@ const GpsPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => 
 
 
   return (
-    // React.createElement('div',
-    // { className: 'gps-box' },
-    //     React.createElement(
-    //         'p',
-    //         { className: 'gps-title' },
-    //         'GPS \uC815\uBCF4'
-    //     ),
-    //     React.createElement(
-    //         Row,
-    //         null,
-    //         React.createElement(
-    //             Col,
-    //             { className: 'gps-leftbox' },
-    //             React.createElement(
-    //                 'table',
-    //                 null,
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'th',
-    //                         null,
-    //                         '\uC704\uCE58'
-    //                     ),
-    //                     React.createElement(
-    //                         'th',
-    //                         null,
-    //                         'GPS \uC704\uCE58\uAC12'
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[0].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[0].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[1].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[1].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[2].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[2].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[3].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[3].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[4].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[4].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[5].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[5].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[6].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[6].pos
-    //                     )
-    //                 ),
-    //                 React.createElement(
-    //                     'tr',
-    //                     null,
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[7].date
-    //                     ),
-    //                     React.createElement(
-    //                         'td',
-    //                         null,
-    //                         gpsDatas[7].pos
-    //                     )
-    //                 )
-    //             )
-    //         ),
-    //         React.createElement(Col, { className: 'gps-rightbox' })
-    //     )
-    // )
     <div className='gps-box'>
         <p className='gps-title'>GPS 정보</p>
 

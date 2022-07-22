@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Footer.css';
 
+
 //페이지 하단 화면
 function Footer() {
 

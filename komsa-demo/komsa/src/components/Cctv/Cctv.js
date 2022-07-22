@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Cctv.css';
+import './CCTV.css';
 
 //CCTV 화면
 function CctvPage() {

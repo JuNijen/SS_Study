@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import { Row } from 'reactstrap';
-import { Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 import './Main.css';
 
 
-class CctvBox extends Component{
+// 메인 페이지의 CCTV 박스
+//_cctvName : CCTV 이름
+//_cctvData : CCTV 데이터 (영상)
+//_cctvButton : CCTV 이미지 (영상만 사용하게 될 경우 폐기될 예정)
+class CCTVBox extends Component{
     render(){
 
         const {_cctvName, _cctvData, _cctvButton} = this.props;
@@ -18,4 +21,4 @@ class CctvBox extends Component{
     }
 }
 
-export default CctvBox;
+export default CCTVBox;

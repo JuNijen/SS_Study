@@ -1,12 +1,11 @@
 import React from 'react';
-import { Row } from 'reactstrap';
-import { Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 import './Main.css';
 // import getServerData from './Server';
 import SensorBox from './SensorBox';
-import CctvBox from './CctvBox';
-import GpsCheckBox from './GpsCheckBox';
+import CctvBox from './CCTVBox';
+import GpsCheckBox from './GPSCheckBox';
 
 import ShipImage from '../../img/ship.png'
 import GpsCheckButton from '../../img/button_plus.svg'

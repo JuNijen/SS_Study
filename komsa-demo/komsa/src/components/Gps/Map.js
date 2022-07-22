@@ -4,6 +4,7 @@ import GoogleMapReact from 'google-map-react';
 //참고자료 : https://www.npmjs.com/package/google-map-react
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
+
 //지도를 표기해주는 구간. 현재 제대로 작동되지 않음.
 export default function SimpleMap(){
   const defaultProps = {
@@ -19,7 +20,6 @@ export default function SimpleMap(){
     <div style={{ height: '100vh', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY }}
-        // bootstrapURLKeys={{ key: "AIzaSyDj3gPwkRAI7Fwa7p8If8LlaAUEDkUnahE" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
