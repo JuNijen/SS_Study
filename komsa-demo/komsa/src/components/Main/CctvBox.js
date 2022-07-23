@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
 
 import './Main.css';
-
+import ButtonBlue from '../../img/button_whiteblue.svg'
+import ButtonDeepBlue from '../../img/button_whitedeepblue.svg'
 
 // 메인 페이지의 CCTV 박스
 //_cctvName : CCTV 이름
@@ -15,7 +16,10 @@ class CCTVBox extends Component{
 
         return (
             <div className='main-r-box-cctv bg-cctv1'>
-                <a>{_cctvName}</a>
+                <Col>
+                    <a>{_cctvName}</a>
+                    <img className='' alt='' src={ButtonBlue}/>
+                </Col>
             </div>
         )    
     }

@@ -35,6 +35,7 @@ webSocket.onopen = () => {
 webSocket.onmessage = function (event) {
     console.log("\n\r서버 웹소켓에게 받은 데이터: " + event.data);
 
+    console.log(event);
     webSoketData = JSON.parse(event.data);
 
     for ( var i in webSoketData ) {
@@ -89,11 +90,11 @@ function MainPage() {
                     </div>
                 </Col>
                 <Col>
-                    <div className='main-r-box-wrapper'>
+                    {/* <div className='main-r-box-wrapper'> */}
                         <CctvBox className='' _cctvName={cctvName[0]} _cctvData={""} _cctvButton={""}/>
                         <CctvBox className='' _cctvName={cctvName[0]} _cctvData={""} _cctvButton={""}/>
                         <GpsCheckBox className='' _gpsCheckButton={GpsCheckButton}/>
-                    </div>
+                    {/* </div> */}
                 </Col>
             </Row>
         </div>

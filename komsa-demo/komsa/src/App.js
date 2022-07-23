@@ -12,9 +12,11 @@ class App extends Component {
 
   render() {
     return (
-      // <PageTemplate className='' _header={Header} _body={MainPage} _footer={Footer} />
-      <PageTemplate className='' _body={MainPage} />
+      // 페이지 전환을 시도하려다 일시 중단.
+       <PageTemplate className='' _body="Main" />
       //React.createElement(PageTemplate, className='',_header={Header}, _body={MainPage}, _footer={Footer})
+      //React.createElement(PageTemplate, _body="MainPage")
+      
 
       // 값을 넘겨주어 구현하려던 노력의 흔적
       //header, body, footer

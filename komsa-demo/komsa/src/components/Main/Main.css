@@ -22,8 +22,8 @@
     display: inline-block;
 
     /* UI Properties */
-    background: #555555 0% 0% no-repeat padding-box;
-    box-shadow: 8px 2px 62px #2233591A;
+    /* background: #555555 0% 0% no-repeat padding-box; */ /* 레이아웃 그리드 확인용 임시 박스*/
+    /* box-shadow: 8px 2px 62px #2233591A; */
     border-radius: 20px;
     opacity: 1;
     
@@ -60,10 +60,8 @@
 
 .main-lt-box > a{
     /* Layout Properties */
-    /* top: 39px;
-    left: 45px; */
-    /* bottom: 287px; */
-    position: relative;
+    padding-top: 39px;
+    padding-left: 45px;
 
     /* Text Settings */
     text-align: left;
@@ -103,9 +101,8 @@
 
 .main-lb-box-sensor .text-sensor-name{
     /* Layout Properties */
-    /* top: 26px;
-    left: 26px; */
-    position: relative;
+    margin-top: 26px;
+    margin-left: 26px;
 
     /* Text Settings */
     text-align: left;
@@ -113,12 +110,13 @@
     letter-spacing: -0.38px;
     color: #3A76FF;
     opacity: 1;
+    text-decoration: none;
 }
 
 .main-lb-box-sensor .text-sensor-data{
     /* Layout Properties */
-    /* top: 54px;
-    position: relative; */
+    margin-top: 10px;
+    margin-left: 26px;
 
     /* Text Settings */
     text-align: left;
@@ -126,13 +124,18 @@
     letter-spacing: -0.6px;
     color: #333333;
     opacity: 1;
+    text-decoration: none;
 }
 
 .main-lb-box-sensor > img{
     /* Layout Properties */
-    /* bottom: 22px;
+    bottom: 22px;
     right: 22px;
-    position: relative; */
+    position: relative;
+}
+
+.main-r-box-wrapper{
+    display: flex !important;
 }
 
 .main-r-box-cctv{
@@ -158,11 +161,10 @@
     background: #012A85 0% 0% no-repeat padding-box;
 }
 
-.main-r-box-cctv > a{
+.main-r-box-cctv > .col > a{
     /* Layout Properties */
-    top: 39px;
-    left: 34px;
-    position: relative;
+    margin-top: 39px;
+    margin-left: 34px;
 
     /* UI Properties */
     text-align: left;
@@ -172,10 +174,19 @@
     opacity: 1;
 }
 
-.main-r-box-gpscheck{
+.main-r-box-cctv > .col > img{
+    width: 77px !important;
+    height: 76px !important;
+    /* position: relative; */
+}
+
+.main-r-box-gps-check{
     /* Layout Properties */
     width: 306px;
     height: 84px;
+    padding-top: 29px;
+    padding-bottom: 30px;
+    padding-left: 34px;
 
     /* UI Properties */
     background: #D9DDE2 0% 0% no-repeat padding-box;
@@ -189,19 +200,19 @@
     color: #000000;
 }
 
-.main-r-box-gps-check > a{
+.main-r-box-gps-check > .row > a{
     /* Layout Properties */
     /* padding-top: 29px;
     padding-left: 34px; */
+    width: auto !important;
+    height: 25px !important;
 }
 
 .main-r-box-gps-check-button{
     /* Layout Properties */
-    /* padding-top: 29px;
-    padding-left: 34px; */
+    width: 39px !important;
+    height: 39px !important;
 
-    /* Layout Properties */
-    /* right: 22px;
-    bottom: 22px;
-    position: relative; */
+    /* padding-left: 131px !important; */
+    padding-left: 20px !important;
 }
