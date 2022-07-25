@@ -17,8 +17,14 @@ class CCTVBox extends Component{
         return (
             <div className='main-r-box-cctv bg-cctv1'>
                 <Col>
-                    <a>{_cctvName}</a>
-                    <img className='' alt='' src={ButtonBlue}/>
+                    <Row>
+                        <a>{_cctvName}</a>
+                    </Row>
+                    <Row>
+                        <button>
+                            <img className='' alt='' src={ButtonBlue}/>
+                        </button>
+                    </Row>
                 </Col>
             </div>
         )    

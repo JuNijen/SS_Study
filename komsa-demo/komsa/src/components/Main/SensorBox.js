@@ -21,15 +21,15 @@ class SensorBox extends Component{
 
         return (
             <div className='main-lb-box-sensor'>
-                <Col>
-                    <Row>
-                        <a className='text-sensor-name'>{_sensorName}</a>
-                        <a className='text-sensor-data'>{_sensorData}</a>
-                    </Row>
-                </Col>
-                <Col>
+                <Row>
+                    <Col>
+                        <Row>
+                            <a className='text-sensor-name'>{_sensorName}</a>
+                            <a className='text-sensor-data'>{_sensorData}</a>
+                        </Row>
+                    </Col>
                     <img className='' alt='' src={_sensorImage}/>
-                </Col>
+                </Row>
             </div>
         )    
     }

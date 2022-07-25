@@ -15,7 +15,9 @@ class GpsCheckBox extends Component{
             <div className='main-r-box-gps-check'>
                 <Row>
                     <a>GPS 확인</a>
-                    <img className='main-r-box-gps-check-button' alt='' src={_gpsCheckButton}/>
+                    <button>
+                        <img alt='' src={_gpsCheckButton}/>
+                    </button>
                 </Row>
             </div>
         )
