@@ -100,6 +100,8 @@ class MainPage extends Component {
                     <Col>
                         <div className='main-lt-box'>
                             <a>{this.state.shipName}</a>
+                            <img className='ship-image' alt='' src={ShipImage}/>
+
                             <button>
                                 <img className='sensor1-image' id="sensortest" alt='' onClick={()=>focusBox(this.state.sensorName[0])} src={TemperatureSensor}/>
                             </button>
@@ -110,7 +112,6 @@ class MainPage extends Component {
                                 <img className='sensor3-image' id={this.state.sensorName[2]} alt='' onClick={()=>focusBox(this.state.sensorName[2])} src={SmokeSensor}/>
                             </button>
 
-                            <img className='ship-image' alt='' src={ShipImage}/>
                             <img className='line1-image' alt='' src={Line1}/>
                             <img className='line2-image' alt='' src={Line2}/>
                             <img className='line3-image' alt='' src={Line3}/>

@@ -17,7 +17,9 @@ function Header() {
       {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="komsa-header">
           <Container fluid>
-            <img className='logo' alt='' src={KomsaLogo}></img>
+            <button>
+              <img className='logo' alt='' src={KomsaLogo}></img>
+            </button>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -29,7 +31,7 @@ function Header() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav className="justify-content-end flex-grow-1 pe-3 komsa-header-ship-list">
                   <a className='right-sides' href="#">선박1</a>
                   <a className='right-sides' href="#">선박2</a>
                   <a className='right-sides' href="#">선박3</a>
