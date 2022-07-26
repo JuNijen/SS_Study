@@ -8,17 +8,19 @@
     opacity: 1;
 }
 
+.komsa-header > div > button{
+    /* UI Properties */    
+    border: none;
+    background-color: #00000000;
+}
+
 .komsa-header .logo {
     /* Layout Properties */
     margin-left: 390px;
 }
 
-.komsa-header > a {
-    /* Layout Properties */
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-
+.komsa-header-ship-list > a,
+.komsa-header-ship-list > a:target{
     /* UI Properties */
     text-align: center;
     font: normal normal bold 20px/24px Pretendard;
@@ -28,12 +30,12 @@
     text-decoration: none;
 }
 
-.komsa-header > a:hover, a:link{
+a:hover, a:link, a:active{
     /* UI Properties */
     text-align: center;
     font: normal normal bold 20px/24px Pretendard;
     letter-spacing: 0px;
-    color: #000000;
+    color: #3A76FF;
     opacity: 1;
     text-decoration: none;
 }

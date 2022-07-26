@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './Cctv.css';
+import './CCTV.css';
 
-
-function CctvPage() {
+//CCTV 화면
+function CCTVPage() {
 
   return (
     // 참고자료 : https://stackoverflow.com/questions/4024137/how-to-play-mpeg-avi-and-flv-file-on-html
@@ -26,4 +26,4 @@ function CctvPage() {
   )
 }
 
-export default CctvPage;
+export default CCTVPage;

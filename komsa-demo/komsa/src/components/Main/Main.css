@@ -1,3 +1,4 @@
+/* 메인 화면 레이아웃 */
 .main-box {
     /* Layout Properties */
     width: 1920px;
@@ -10,6 +11,7 @@
     text-align: center;
 }
 
+/* 메인 화면 레이아웃 그룹 */
 .main-wrapper{
     /* Layout Properties */
     /* 801+33+306 */
@@ -22,22 +24,20 @@
     display: inline-block;
 
     /* UI Properties */
-    background: #555555 0% 0% no-repeat padding-box;
-    box-shadow: 8px 2px 62px #2233591A;
+    /* background: #555555 0% 0% no-repeat padding-box; */ /* 레이아웃 그리드 확인용 임시 박스*/
+    /* box-shadow: 8px 2px 62px #2233591A; */
     border-radius: 20px;
     opacity: 1;
     
     text-align: center;
 }
 
-.main-boxes > a {
-
-}
-
+/* 메인 좌측 그룹 */
 .main-left-group{
     margin-right: 33px;
 }
 
+/* 메인 우측 그룹 */
 .main-right-group{
 
 }
@@ -46,6 +46,7 @@
     --bs-gutter-x: 0rem;
 }
 
+/* 메인 선박 박스 */
 .main-lt-box{
     /* Layout Properties */
     width: 801px;
@@ -60,11 +61,10 @@
 
 .main-lt-box > a{
     /* Layout Properties */
-    top: 39px;
-    left: 45px;
-    /* bottom: 287px; */
-    position: relative;
-
+    top: 245px;
+    left: 415px;
+    position: fixed;
+    
     /* Text Settings */
     text-align: left;
     font: normal normal bold 25px/30px Pretendard;
@@ -73,11 +73,87 @@
     opacity: 1;
 }
 
+
+.main-lt-box > img{
+    /* Layout Properties */
+    position: fixed;
+
+    /* UI Properties */
+    opacity: 1;
+}
+
+.main-lt-box > .ship-image{
+    /* Layout Properties */
+    width: 557px;
+    height: 213px;
+    top: 344px;
+    left: 579px;
+}
+
+.main-lt-box > .line1-image{
+    /* Layout Properties */
+    top: 360px;
+    left: 616px;
+    width: 80px;
+    height: 19px;
+}
+
+.main-lt-box > .line2-image{
+    /* Layout Properties */
+    top: 470px;
+    left: 500px;
+    width: 148px;
+    height: 24px;
+}
+
+.main-lt-box > .line3-image{
+    /* Layout Properties */
+    top: 370px;
+    left: 782px;
+    width: 92px;
+    height: 13px;
+}
+
+.main-lt-box > button{
+    /* UI Properties */
+    border: none;
+    background-color: #00000000;
+}
+
+.main-lt-box > button > img{
+    /* Layout Properties */
+    width: 80px;
+    height: 80px;
+    position: fixed;
+}
+
+.main-lt-box > button > .sensor1-image{
+    /* Layout Properties */
+    top: 314px;
+    left: 534px;
+}
+
+.main-lt-box > button > .sensor2-image{
+    /* Layout Properties */
+    top: 423px;
+    left: 447px;
+}
+
+.main-lt-box > button > .sensor3-image{
+    /* Layout Properties */
+    top: 320px;
+    left: 873px;
+}
+
+
+
+/* 좌측 박스 그룹 */
 .main-lb-box-wrapper{
     display: flex !important;
     /* flex-wrap: wrap; */
 }
 
+/* 좌측 박스 센서 객체 */
 .main-lb-box-sensor{
     /* Layout Properties */
     width: 246px !important;
@@ -88,20 +164,39 @@
     /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 8px 2px 62px #2233591A;
-    border: 2px solid #3A76FF;
     border-radius: 20px;
     opacity: 1;
 }
 
-.main-lb-box-sensor > a{
+.main-lb-box-sensor :focus{
+    border: 2px solid #3A76FF;
+}
+
+.main-lb-box-sensor > .row > .col{
+    /* Layout Properties */
+    width: 144px !important;
+    flex: 0 0 !important;
+}
+
+.main-lb-box-sensor > .row > .col > .row {
+    width: 144px;    
+}
+
+.main-lb-box-sensor > .row > .col > .row > a{
+    /* Layout Properties */
+    width: 144px;
+    max-width: 10ch;
+    overflow: hidden;
+    
+    /* Text Settings */
     text-decoration: none;
+    text-overflow: ellipsis;
 }
 
 .main-lb-box-sensor .text-sensor-name{
     /* Layout Properties */
-    top: 26px;
-    left: 26px;
-    position: relative;
+    margin-top: 26px;
+    margin-left: 26px;
 
     /* Text Settings */
     text-align: left;
@@ -113,8 +208,8 @@
 
 .main-lb-box-sensor .text-sensor-data{
     /* Layout Properties */
-    top: 54px;
-    position: relative;
+    margin-top: 10px;
+    margin-left: 26px;
 
     /* Text Settings */
     text-align: left;
@@ -124,11 +219,16 @@
     opacity: 1;
 }
 
-.main-lb-box-sensor > img{
+.main-lb-box-sensor > .row > img{
     /* Layout Properties */
-    bottom: 22px;
-    right: 22px;
-    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 58px;
+    margin-right: 22px;   
+}
+
+.main-r-box-wrapper{
+    display: flex !important;
 }
 
 .main-r-box-cctv{
@@ -154,11 +254,15 @@
     background: #012A85 0% 0% no-repeat padding-box;
 }
 
-.main-r-box-cctv > a{
+.main-r-box-cctv > .col > .row > button{
+    height: 100%;
+}
+
+.main-r-box-cctv > .col > .row > a{
     /* Layout Properties */
-    top: 39px;
-    left: 34px;
-    position: relative;
+    width: auto;
+    margin-top: 35px;
+    margin-left: 35px;
 
     /* UI Properties */
     text-align: left;
@@ -168,7 +272,23 @@
     opacity: 1;
 }
 
-.main-r-box-gpscheck{
+.main-r-box-cctv > .col > .row > button{
+    /* UI Properties */
+    text-align: end;
+    border: none;
+    background-color: #00000000;
+}
+
+.main-r-box-cctv > .col > .row > button > img{
+    /* Layout Properties */
+    margin-right: 22px;
+    margin-bottom: 24px;
+    width: 77px !important;
+    height: 76px !important;
+}
+
+
+.main-r-box-gps-check{
     /* Layout Properties */
     width: 306px;
     height: 84px;
@@ -185,19 +305,29 @@
     color: #000000;
 }
 
-.main-r-box-gps-check > a{
-    /* Layout Properties */
-    /* padding-top: 29px;
-    padding-left: 34px; */
+.main-r-box-gps-check > .row {
+    width: 100%;
 }
 
-.main-r-box-gps-check-button{
+.main-r-box-gps-check > .row > a{
     /* Layout Properties */
-    /* padding-top: 29px;
-    padding-left: 34px; */
+    width: 201px !important;
+    height: 25px !important;
+    padding-top: 29px;
+    padding-bottom: 30px;
+    padding-left: 34px;
+}
 
+.main-r-box-gps-check > .row > button {
     /* Layout Properties */
-    /* right: 22px;
-    bottom: 22px;
-    position: relative; */
+    width: 39px !important;
+    height: 39px !important;
+    padding-top: 23px;
+    padding-bottom: 22px;
+    padding-right: 22px;
+
+    /* padding-left: 131px !important; */
+    padding-left: 20px !important;
+    border: none;
+    background-color: #00000000;
 }
