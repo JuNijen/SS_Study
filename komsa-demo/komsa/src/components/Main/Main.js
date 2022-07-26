@@ -5,7 +5,7 @@ import './Main.css';
 // import getServerData from './Server';
 import SensorBox from './SensorBox';
 import CCTVBox from './CCTVBox';
-import GpsCheckBox from './GPSCheckBox';
+import GPSCheckBox from './GPSCheckBox';
 
 import ShipImage from '../../img/ship.png'
 import GpsCheckButton from '../../img/button_plus.svg'
@@ -126,7 +126,7 @@ class MainPage extends Component {
                         {/* <div className='main-r-box-wrapper'> */}
                             <CCTVBox className='' _cctvName={this.state.cctvName[0]} _cctvData={""} _cctvButton={""}/>
                             <CCTVBox className='' _cctvName={this.state.cctvName[0]} _cctvData={""} _cctvButton={""}/>
-                            <GpsCheckBox className='' _gpsCheckButton={GpsCheckButton}/>
+                            <GPSCheckBox className='' _gpsCheckButton={GpsCheckButton}/>
                         {/* </div> */}
                     </Col>
                 </Row>

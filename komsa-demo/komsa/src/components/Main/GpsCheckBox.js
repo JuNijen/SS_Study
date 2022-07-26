@@ -6,7 +6,7 @@ import './Main.css';
 
 // 메인 페이지의 GPS 관리 박스
 //_gpsCheckButton : 우측 + 버튼 이미지
-class GpsCheckBox extends Component{
+class GPSCheckBox extends Component{
     render(){
 
         const {_gpsCheckButton} = this.props;
@@ -24,4 +24,4 @@ class GpsCheckBox extends Component{
     }
 }
 
-export default GpsCheckBox;
+export default GPSCheckBox;

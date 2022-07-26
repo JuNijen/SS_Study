@@ -39,7 +39,7 @@ function GpsData(){
     var date, pos;
 }
 
-const GpsPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => {
+const GPSPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => {
 
     //map으로 구성된 array를 사용하고 싶은데
     var gpsData = new GpsData();
@@ -107,4 +107,4 @@ const GpsPage = ({ mapLocation, containerStyle, mapviewMarkerClickHandler }) => 
   )
 }
 
-export default GpsPage;
+export default GPSPage;
